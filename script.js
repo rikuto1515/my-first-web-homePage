@@ -1,5 +1,8 @@
-document.getElementById("changeColorBtn").addEventListener("click", function() {
-    const colors = ["#ffcccc", "#ccffcc", "#ccccff", "#ffffcc", "#e0ccff"];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.body.style.backgroundColor = randomColor;
+document.getElementById("addEventBtn").addEventListener("click", function() {
+    const eventList = document.getElementById("event-list");
+    const newEvent = document.createElement("li");
+    newEvent.textContent = "8月25日：来店感謝イベント - ドリンクサービス！";
+    eventList.appendChild(newEvent);
 });
+
+
