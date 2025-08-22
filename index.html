@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>〇〇レンタカー | 予約サイト</title>
+  <meta name="description" content="〇〇レンタカー公式サイト。低価格・安心の車をご提供。オンライン予約対応。">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home" aria-label="〇〇レンタカー ホーム">〇〇<span>Rentacar</span></a>
+
+      <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="メニュー">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="メインメニュー">
+        <a href="#fleet">車種一覧</a>
+        <a href="#pricing">料金</a>
+        <a href="#reserve" class="btn btn-primary">予約する</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-inner">
+      <h1>快適な旅を、手軽に。</h1>
+      <p>〇〇レンタカーは、明瞭料金・全車禁煙・即時オンライン予約に対応。</p>
+      <div class="hero-cta">
+        <a href="#reserve" class="btn btn-primary">今すぐ予約</a>
+        <a href="#fleet" class="btn btn-ghost">車種を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container features-grid">
+      <article class="feature-card">
+        <h3>明瞭会計</h3>
+        <p>表示料金は保険・税金込み。隠れコストなし。</p>
+      </article>
+      <article class="feature-card">
+        <h3>スマホで完結</h3>
+        <p>オンラインで予約〜変更までスムーズ。</p>
+      </article>
+      <article class="feature-card">
+        <h3>安心サポート</h3>
+        <p>24時間ロードサービス提携（オプション）。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Fleet -->
+  <section id="fleet" class="fleet">
+    <div class="container">
+      <h2>車種ラインアップ</h2>
+      <div class="fleet-grid">
+        <article class="car-card">
+          <img src="https://placehold.co/640x360?text=Compact" alt="コンパクトクラスの車両">
+          <div class="car-body">
+            <h3>コンパクト</h3>
+            <ul>
+              <li>燃費◎ / 街乗りに最適</li>
+              <li>定員5名 / 禁煙</li>
+            </ul>
+          </div>
+        </article>
+        <article class="car-card">
+          <img src="https://placehold.co/640x360?text=Sedan" alt="セダンクラスの車両">
+          <div class="car-body">
+            <h3>セダン</h3>
+            <ul>
+              <li>長距離も快適</li>
+              <li>先進安全装備</li>
+            </ul>
+          </div>
+        </article>
+        <article class="car-card">
+          <img src="https://placehold.co/640x360?text=Minivan" alt="ミニバンクラスの車両">
+          <div class="car-body">
+            <h3>ミニバン</h3>
+            <ul>
+              <li>大人数・旅行に</li>
+              <li>広々ラゲッジ</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2>料金</h2>
+      <div class="pricing-grid">
+        <article class="price-card">
+          <h3>コンパクト</h3>
+          <p class="price"><span data-price="compact">5,000</span>円/日〜</p>
+          <ul>
+            <li>基本保険込み</li>
+            <li>走行距離 無制限</li>
+          </ul>
+        </article>
+        <article class="price-card">
+          <h3>セダン</h3>
+          <p class="price"><span data-price="sedan">7,000</span>円/日〜</p>
+          <ul>
+            <li>基本保険込み</li>
+            <li>先進安全装備</li>
+          </ul>
+        </article>
+        <article class="price-card">
+          <h3>ミニバン</h3>
+          <p class="price"><span data-price="minivan">9,000</span>円/日〜</p>
+          <ul>
+            <li>基本保険込み</li>
+            <li>チャイルドシート可</li>
+          </ul>
+        </article>
+      </div>
+      <p class="note">※ シーズン/店舗により変動する場合があります。</p>
+    </div>
+  </section>
+
+  <!-- Reservation -->
+  <section id="reserve" class="reserve">
+    <div class="container">
+      <h2>予約</h2>
+
+      <!-- Availability / Estimator -->
+      <form id="availabilityForm" class="card" novalidate>
+        <h3>空き状況の確認</h3>
+        <div class="grid-2">
+          <label>店舗/受取場所
+            <select name="location" required>
+              <option value="">選択してください</option>
+              <option value="tokyo">東京駅前店</option>
+              <option value="haneda">羽田空港店</option>
+              <option value="narita">成田空港店</option>
+            </select>
+          </label>
+          <label>クラス
+            <select name="carClass" required>
+              <option value="">選択してください</option>
+              <option value="compact">コンパクト</option>
+              <option value="sedan">セダン</option>
+              <option value="minivan">ミニバン</option>
+            </select>
+          </label>
+          <label>出発日時
+            <input type="datetime-local" name="startAt" required />
+          </label>
+          <label>返却日時
+            <input type="datetime-local" name="endAt" required />
+          </label>
+        </div>
+
+        <div class="estimation">
+          <div>日数見込み: <strong id="daysEstimate">-</strong> 日</div>
+          <div>概算料金: <strong id="priceEstimate">-</strong> 円</div>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="checkAvailabilityBtn" class="btn">空きを確認</button>
+        </div>
+
+        <p id="availabilityMessage" class="sr-only" aria-live="polite"></p>
+      </form>
+
+      <!-- Booking details -->
+      <form id="reservationForm" class="card" novalidate>
+        <h3>お客様情報</h3>
+        <div class="grid-2">
+          <label>お名前
+            <input type="text" name="name" placeholder="山田 太郎" required minlength="2" />
+          </label>
+          <label>メール
+            <input type="email" name="email" placeholder="taro@example.com" required />
+          </label>
+          <label>電話番号（ハイフン可）
+            <input type="tel" name="phone" inputmode="tel" pattern="^[0-9\\-\\+]{9,15}$" required />
+          </label>
+          <label>オプション
+            <select name="option">
+              <option value="">なし</option>
+              <option value="childseat">チャイルドシート</option>
+              <option value="etccard">ETCカード</option>
+              <option value="ins_plus">免責補償プラス</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="consents">
+          <label class="checkbox">
+            <input type="checkbox" name="agree" required />
+            <span>利用規約とプライバシーポリシーに同意します</span>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary" id="reserveSubmitBtn">予約を確定する</button>
+          <span id="reserveStatus" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <!-- Confirmation modal -->
+      <dialog id="confirmDialog">
+        <form method="dialog" class="dialog-body">
+          <h3>予約を送信しました</h3>
+          <p>確認メールをお送りしました。内容をご確認ください。</p>
+          <menu>
+            <button value="ok" class="btn btn-primary">OK</button>
+          </menu>
+        </form>
+      </dialog>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>お問い合わせ</h2>
+      <p>営業時間: 9:00–19:00（年中無休）</p>
+      <p>メール: support@example.com / 電話: 03-1234-5678</p>
+      <address>東京都〇〇区〇〇 1-2-3 〇〇ビル1F</address>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>&copy; <span id="year"></span> 〇〇レンタカー</small>
+      <a href="#home" class="to-top" aria-label="ページ上部へ">▲ TOP</a>
+    </div>
+  </footer>
+</body>
+</html>
